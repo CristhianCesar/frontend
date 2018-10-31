@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Adicionar Cliente</h1>
+<div mat-dialog-content>
+
+  {{ cliente | json}}
+
+  
+    <input mat-input placeholder="Código" [(ngModel)]="cliente.codigo">
+  
+
+</div>
+<div mat-dialog-actions>
+  <span class="span-spacer"></span>
+  <button mat-button (click)="cancelDialog()">Cancelar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="cliente">Confirmar</button>
+</div>
