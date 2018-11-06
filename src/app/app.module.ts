@@ -16,7 +16,8 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteDialogComponent } from './cliente/cliente-dialog/cliente-dialog.component';
@@ -30,7 +31,8 @@ import { ClienteDialogComponent } from './cliente/cliente-dialog/cliente-dialog.
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule{}

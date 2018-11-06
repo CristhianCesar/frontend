@@ -1,7 +1,7 @@
 import { ClienteDialogComponent } from './cliente-dialog/cliente-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../_services/cliente.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 
 export interface Cliente {
   id: number;
@@ -24,7 +24,9 @@ export class ClienteComponent implements OnInit {
   public displayedColumns = ['codigo', 'nome', 'email','endereco', 'cidade'];
   public dataSource: Array<Cliente> = [];
 
-  constructor(private clienteService: ClienteService, private dialog: MatDialog) { }
+  constructor(private clienteService: ClienteService, 
+              private dialog: MatDialog, 
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -44,7 +46,16 @@ export class ClienteComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log( result );
+      if ( result ) {
+        this.clienteService.save( result )
+          .subscribe(result => {
+            this.snackBar.open('Registro Salvo com Sucesso', 'Ok', {
+              duration: 3000
+            });
+          }, error => {
+            console.log('Pau', error);
+          });
+      }
     });
   }
 

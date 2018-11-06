@@ -1,11 +1,58 @@
 <h1 mat-dialog-title>Adicionar Cliente</h1>
 <div mat-dialog-content>
 
-  {{ cliente | json}}
+  <mat-form-field>
+    <input matInput placeholder="Código" [(ngModel)]="cliente.codigo">
+  </mat-form-field>
 
-  
-    <input mat-input placeholder="Código" [(ngModel)]="cliente.codigo">
-  
+  <mat-form-field>
+    <input matInput placeholder="Nome" [(ngModel)]="cliente.nome">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="E-mail" [(ngModel)]="cliente.email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Endereço" [(ngModel)]="cliente.endereco">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Escolha Estado" [(ngModel)]="cliente.uf">
+      <mat-option value="AC">Acre</mat-option>
+      <mat-option value="AL">Alagoas</mat-option>
+      <mat-option value="AP">Amapá</mat-option>
+      <mat-option value="AM">Amazonas</mat-option>
+      <mat-option value="BA">Bahia</mat-option>
+      <mat-option value="CE">Ceará</mat-option>
+      <mat-option value="DF">Distrito Federal</mat-option>
+      <mat-option value="ES">Espírito Santo</mat-option>
+      <mat-option value="GO">Goiás</mat-option>
+      <mat-option value="MA">Maranhão</mat-option>
+      <mat-option value="MT">Mato Grosso</mat-option>
+      <mat-option value="MS">Mato Grosso do Sul</mat-option>
+      <mat-option value="MG">Minas Gerais</mat-option>
+      <mat-option value="PA">Pará</mat-option>
+      <mat-option value="PB">Paraíba</mat-option>
+      <mat-option value="PR">Paraná</mat-option>
+      <mat-option value="PE">Pernambuco</mat-option>
+      <mat-option value="PI">Piauí</mat-option>
+      <mat-option value="RJ">Rio de Janeiro</mat-option>
+      <mat-option value="RN">Rio Grande do Norte</mat-option>
+      <mat-option value="RS">Rio Grande do Sul</mat-option>
+      <mat-option value="RO">Rondônia</mat-option>
+      <mat-option value="RR">Roraima</mat-option>
+      <mat-option value="SC">Santa Catarina</mat-option>
+      <mat-option value="SP">São Paulo</mat-option>
+      <mat-option value="SE">Sergipe</mat-option>
+      <mat-option value="TO">Tocantins</mat-option>
+      <mat-option value="ES">Estrangeiro</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Cidade" [(ngModel)]="cliente.cidade">
+  </mat-form-field> 
 
 </div>
 <div mat-dialog-actions>
