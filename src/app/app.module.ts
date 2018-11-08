@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteComponent, ErrorDetailComponent } from './cliente/cliente.component';
 import { HttpModule } from '@angular/http';
 
 import {
@@ -17,7 +17,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatMenuModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteDialogComponent } from './cliente/cliente-dialog/cliente-dialog.component';
@@ -32,7 +33,8 @@ import { ClienteDialogComponent } from './cliente/cliente-dialog/cliente-dialog.
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule{}
@@ -41,10 +43,12 @@ export class MaterialModule{}
   declarations: [
     AppComponent,
     ClienteComponent,
-    ClienteDialogComponent
+    ClienteDialogComponent,
+    ErrorDetailComponent
   ],
   entryComponents: [
-    ClienteDialogComponent
+    ClienteDialogComponent,
+    ErrorDetailComponent
   ],
   imports: [
     BrowserModule,

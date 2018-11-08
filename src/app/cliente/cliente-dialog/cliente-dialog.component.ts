@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Cliente } from '../cliente.component';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -13,9 +13,10 @@ export class ClienteDialogComponent {
 
   public cliente: Cliente;
 
-  constructor(public dialogRef: MatDialogRef<ClienteDialogComponent>) { 
+  constructor(public dialogRef: MatDialogRef<ClienteDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: Cliente ) { 
 
-    this.cliente = {codigo: '000001'} as Cliente;
+    this.cliente = Object.assign({}, data);
 
   }
 
